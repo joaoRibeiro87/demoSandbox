@@ -1,0 +1,21 @@
+parameters:
+    cache_eu_namespace: eu
+    cache_com_namespace: com
+
+services:
+    cache.eu:
+        public: true
+        class: Symfony\Component\Cache\Adapter\FilesystemTagAwareAdapter
+        parent: cache.adapter.filesystem
+        tags:
+            - name: cache.pool
+              clearer: cache.app_clearer
+              namespace: '%cache_eu_namespace%'
+    cache.com:
+        public: true
+        class: Symfony\Component\Cache\Adapter\FilesystemTagAwareAdapter
+        parent: cache.adapter.filesystem
+        tags:
+            - name: cache.pool
+              clearer: cache.app_clearer
+              namespace: '%cache_com_namespace%'

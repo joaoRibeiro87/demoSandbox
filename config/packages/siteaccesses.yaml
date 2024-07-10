@@ -1,0 +1,81 @@
+ibexa:
+    repositories:
+        eu_repo:
+            storage:
+                connection: db_bikeride_eu
+            search:
+                engine: '%search_engine%'
+                connection: db_bikeride_eu
+            product_catalog:
+                engine: default
+        com_repo:
+            storage:
+                connection: db_bikeride_com
+            search:
+                engine: '%search_engine%'
+                connection: db_bikeride_com
+            product_catalog:
+                engine: default
+    siteaccess:
+      list: [bikeride_eu, bikeride_fr, bikeride_de, bikeride_at, bikeride_com, admin_eu, admin_com]
+      groups:
+          admin_group: [admin_eu, admin_com]
+          front_group: [bikeride_eu, bikeride_fr, bikeride_de, bikeride_at, bikeride_com]
+          repo_eu_group: [admin_eu, bikeride_eu, bikeride_fr, bikeride_de, bikeride_at]
+          repo_com_group: [admin_com, bikeride_com]
+      default_siteaccess: bikeride_eu
+      match:
+          Compound\LogicalAnd:
+              bikeride_at_matcher:
+                  matchers:
+                      Map\URI:
+                          at: true
+                      Map\Host:
+                          www.bikeride.de: true
+                  match: bikeride_at
+          Map\Host:
+              admin.bikeride.eu: admin_eu
+              www.bikeride.eu: bikeride_eu
+              www.bikeride.fr: bikeride_fr
+              www.bikeride.de: bikeride_de
+              admin.bikeride.com: admin_com
+              www.bikeride.com: bikeride_com
+    system:
+      front_group:
+        #...
+      repo_eu_group:
+          cache_service_name: cache.eu
+          var_dir: var/site
+          repository: eu_repo
+      repo_com_group:
+          cache_service_name: cache.com
+          var_dir: var/bikeride_com
+          repository: com_repo
+      bikeride_eu:
+          languages:
+              - eng-GB
+      bikeride_at:
+          languages:
+              - ger-AT
+              - eng-GB
+      bikeride_de:
+          languages:
+              - ger-DE
+              - eng-GB
+      bikeride_fr:
+          languages:
+              - fre-FR
+              - eng-GB
+      bikeride_com:
+          languages:
+              - eng-US
+              - eng-GB
+      admin_eu:
+          languages: [eng-GB, fre-FR, ger-DE, ger-AT]
+          page_builder:
+              siteaccess_list: [bikeride_eu, bikeride_fr, bikeride_de, bikeride_at]
+      admin_com:
+          languages: [eng-GB, eng-US]
+          page_builder:
+              siteaccess_list: [bikeride_com]
+      

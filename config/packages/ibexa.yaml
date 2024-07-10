@@ -58,7 +58,9 @@ ibexa:
     # HttpCache settings, By default 'local' (Symfony HttpCache Proxy), by setting it to 'varnish' you can point it to Varnish
     http_cache:
         purge_type: '%purge_type%'
-
+    ui:
+        translations:
+            enabled: true
     # Repositories configuration, setup default repository to support solr if enabled
     repositories:
         default:
@@ -79,7 +81,7 @@ ibexa:
             corporate_group: [corporate]
         default_siteaccess: site
         match:
-            URIElement: 1
+#            URIElement: 1
             # Uncomment if you've enabled SiteFactory
             # '@Ibexa\SiteFactory\SiteAccessMatcher': ~
 
@@ -120,7 +122,6 @@ ibexa:
 
         corporate_group:
             languages: [eng-GB]
-
     url_alias:
         slug_converter:
             transformation: 'urlalias_lowercase'
