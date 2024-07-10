@@ -1,0 +1,24 @@
+{% extends '@ibexadesign/ui/layout.html.twig' %}
+
+{% trans_default_domain 'menu' %}
+
+{% block title %}
+    {{ 'custom_page.title'|trans|desc('ContentType\'s Last Modified Contents') }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% include '@ibexadesign/ui/breadcrumbs.html.twig' with { items: [
+        { value: 'breadcrumb.content'|trans|desc('Content') },
+        { url: path('app.admin.custompage.menu'), value: 'main__content__custom_page'|trans|desc('Custom Page') },
+    ]} %}
+{% endblock %}
+
+{% block page_title %}
+    {% include '@ibexadesign/ui/page_title.html.twig' with {
+        title: 'custom_page.title'|trans|desc('ContentType\'s Last Modified Contents'),
+        iconName: 'browse'
+    } %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
