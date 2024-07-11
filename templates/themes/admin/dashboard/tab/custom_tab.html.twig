@@ -1,0 +1,43 @@
+{% trans_default_domain 'dashboard' %}
+
+{% import "@ibexadesign/ui/dashboard/macros.html.twig" as macros %}
+
+{% if data is defined and data|length %}
+    <table class="table table-hover ibexa-table">
+        <thead>
+        <tr class="ibexa-table__head-row">
+            <th class="ibexa-table__header-cell">{{ 'dashboard.customtab.table.name'|trans|desc('Name') }}</th>
+            <th class="ibexa-table__header-cell">{{ 'dashboard.customtab.table.content_type'|trans|desc('Content type') }}</th>
+            <th class="ibexa-table__header-cell">{{ 'dashboard.customtab.table.modified'|trans|desc('Modified') }}</th>
+            <th class="ibexa-table__header-cell">{{ 'dashboard.customtab.table.version'|trans|desc('Version') }}</th>
+            <th class="ibexa-table__header-cell">{{ 'dashboard.customtab.table.content.id'|trans|desc('Content ID') }}</th>
+            <th class="ibexa-table__header-cell"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in data %}
+            <tr class="ibexa-table__row">
+                <td class="ibexa-table__cell"><a href={{ibexa_path(row.valueObject)}}>{{ ibexa_content_name(row.valueObject) }}</a></td>
+                <td class="ibexa-table__cell">{{ row.valueObject.contentType.name }}</td>
+                <td class="ibexa-table__cell">{{ row.valueObject.modificationDate|ibexa_full_datetime }}</td>
+                <td class="ibexa-table__cell">{{ row.valueObject.publishedDate|ibexa_full_datetime }}</td>
+                <td class="ibexa-table__cell">{{ row.valueObject.id }}</td>
+
+                <td class="ibexa-table__cell ibexa-table__cell--has-action-btns">
+                    <button class="btn btn-icon ibexa-btn--content-edit"
+                            title="{{ 'dashboard.customtab.table.content.edit'|trans|desc('Edit Content') }}"
+                            data-content-id="{{ row.valueObject.id }}"
+                            data-version-no="{{ row.valueObject.currentVersionNo }}"
+                            data-language-code="{{ row.valueObject.mainLanguageCode }}">
+                        <svg class="ibexa-icon ibexa-icon--small ibexa-icon-edit">
+                            <use xlink:href="{{ asset('/bundles/ibexaicons/img/all-icons.svg#edit') }}"></use>
+                        </svg>
+                    </button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p class="ibexa-table-no-content mb-0 py-0">{{ 'dashboard.tab.my_content.empty'|trans|desc('No Content items. Content items you create will appear here') }}</p>
+{% endif %}

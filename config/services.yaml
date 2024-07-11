@@ -25,5 +25,16 @@ services:
         calls:
             - [ setContainer, [ '@service_container' ] ]
             - [ performAccessCheck, [ ] ]
+    app.dashboard.customtabgroup:
+        parent: Ibexa\AdminUi\Component\TabsComponent
+        arguments:
+            $groupIdentifier: 'dashboard-custom'
+        tags:
+            - { name: ibexa.admin_ui.component, group: 'dashboard-custom-tab-groups' }
+
+    App\Tab\Dashboard\CustomTab:
+        parent: Ibexa\Contracts\AdminUi\Tab\AbstractTab
+        tags:
+            - { name: ibexa.admin_ui.tab, group: 'dashboard-custom' }
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

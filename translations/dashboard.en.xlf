@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="0efc6c638cd1b271c2232d9e38f2dbe544149a3a" resname="dashboard.customblock">
+        <source>Custom Block</source>
+        <target>Custom Block</target>
+        <note>key: dashboard.customblock</note>
+      </trans-unit>
+      <trans-unit id="4cac81c976b0ffe864053fbb908122e1ee1b1034" resname="dashboard.customtab">
+        <source>Custom Tab</source>
+        <target>Custom Tab</target>
+        <note>key: dashboard.customtab</note>
+      </trans-unit>
+      <trans-unit id="0387e88e677a1aff0e22fa125e98611257302b96" resname="dashboard.customtab.table.content.edit">
+        <source>Edit Content</source>
+        <target>Edit Content</target>
+        <note>key: dashboard.customtab.table.content.edit</note>
+      </trans-unit>
+      <trans-unit id="d9b8c645e67e80b81ddd8af2081a3a22d688bfc4" resname="dashboard.customtab.table.content.id">
+        <source>Content ID</source>
+        <target>Content ID</target>
+        <note>key: dashboard.customtab.table.content.id</note>
+      </trans-unit>
+      <trans-unit id="f34e4d6b07967e3edc75dd7f3ca336933f5b7153" resname="dashboard.customtab.table.content_type">
+        <source>Content type</source>
+        <target>Content type</target>
+        <note>key: dashboard.customtab.table.content_type</note>
+      </trans-unit>
+      <trans-unit id="3921806e084590c4809f0ed958fd7bc35ce7dfc3" resname="dashboard.customtab.table.modified">
+        <source>Modified</source>
+        <target>Modified</target>
+        <note>key: dashboard.customtab.table.modified</note>
+      </trans-unit>
+      <trans-unit id="84c735da3fda063ac40a4859f2b03b7e7a284736" resname="dashboard.customtab.table.name">
+        <source>Name</source>
+        <target>Name</target>
+        <note>key: dashboard.customtab.table.name</note>
+      </trans-unit>
+      <trans-unit id="94851743e455546d174d079600e727085cb2ced4" resname="dashboard.customtab.table.version">
+        <source>Version</source>
+        <target>Version</target>
+        <note>key: dashboard.customtab.table.version</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
