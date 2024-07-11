@@ -1,0 +1,10 @@
+ibexa_fieldtype_page:
+    blocks:
+        custom_dashboard_block:
+            name: Custom Dashboard Block
+            category: Dashboard
+            thumbnail: '/bundles/ibexaicons/img/all-icons.svg#history'
+            views:
+                default:
+                    name: 'Default block layout'
+                    template: '@ibexadesign/dashboard/blocks/custom_dashboard_block.html.twig'

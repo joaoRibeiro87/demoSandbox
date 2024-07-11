@@ -12,6 +12,7 @@ use Pagerfanta\Pagerfanta;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Form\Type\ContentTypeModifiedContentsType;
 
 class CustomPageController extends Controller
 {
@@ -33,10 +34,26 @@ class CustomPageController extends Controller
 
     public function view(Request $request): Response
     {
-        //TODO: Handle request and form
+        $form = $this->createForm(
+            ContentTypeModifiedContentsType::class,
+            new ContentTypeModifiedContentsData(),
+            [
+            'method' => Request::METHOD_GET
+            ]
+        );
+
+        $form->handleRequest($request);
+        if($form->isSubmitted()) {
+            return $this->submitHandler->handle(
+                $form,
+                function (ContentTypeModifiedContentsData $data) use ($form) {
+                    return $this->handleSubmittedForm($form, $data);
+                }
+            );
+        }
 
         return $this->render('@ibexadesign/custom_page.html.twig', [
-            //'form' => $form->createView(),
+            'form' => $form->createView(),
         ]);
     }
 
