@@ -90,6 +90,68 @@ ibexa:
     #      on single-site you can place shared config under "default" for simplicity as shown below.
     system:
         default:
+            workflows:
+                # Identifier of the workflow
+                bikeride_workflow:
+                    name: Bike Ride Workflow
+                    matchers:
+                        # Which Content Types can use this workflow, optional
+                        content_type: [bike_ride]
+                        # Which status of the Content item can use this workflow, optional. Available statuses are draft and published.
+                        content_status: [draft]
+                    # All stages the content goes through
+                    stages:
+                        draft:
+                            label: Draft
+                            color: '#f15a10'
+                        participants:
+                            label: Participants
+                            color: '#5a10f1'
+                        proofreading:
+                            label: Proofreading
+                            color: '#301203'
+                        ready:
+                            label: Ready
+                            color: '#5b8930'
+                            # Content items in this stage don't appear on the Dashboard and in Review Queue.
+                            last_stage: true
+                    initial_stage: draft
+                    # Available transitions between stages
+                    transitions:
+                        to_participants:
+                            from: [draft]
+                            to: [participants]
+                            label: Participants
+                            color: '#8888ba'
+                            icon: '/bundles/ibexaicons/img/all-icons.svg#comment'
+                            reviewers:
+                                required: true
+                        back_to_draft:
+                            reverse: to_participants
+                            label: Not approved
+                            color: '#cb8888'
+                            icon: '/bundles/ibexaicons/img/all-icons.svg#comment'
+                        to_proofreading:
+                            from: [participants]
+                            to: [proofreading]
+                            label: Proofreading
+                            color: '#8888ba'
+                            icon: '/bundles/ibexaicons/img/all-icons.svg#comment'
+                            reviewers:
+                                required: true
+                        back_to_participants:
+                            reverse: to_proofreading
+                            label: Requires corrections
+                            color: '#cb8888'
+                            icon: '/bundles/ibexaicons/img/all-icons.svg#comment'
+                        done:
+                            from: [proofreading]
+                            to: [ready]
+                            label: Ready to publish
+                            color: '#88ad88'
+                            icon: '/bundles/ibexaicons/img/all-icons.svg#comment'
+                            actions:
+                                publish: ~
             # Cache pool service, needs to be different per repository (database) on multi repository install.
             cache_service_name: '%cache_pool%'
             # These reflect the current installers, complete installation before you change them. For changing var_dir
