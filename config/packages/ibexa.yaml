@@ -122,6 +122,10 @@ ibexa:
 
         corporate_group:
             languages: [eng-GB]
+        admin_group:
+            fieldtypes:
+                ezrichtext:
+                    custom_styles: [highlighted_block, highlighted_word]
     url_alias:
         slug_converter:
             transformation: 'urlalias_lowercase'
@@ -144,3 +148,11 @@ framework:
     lock:
         default: '%env(LOCK_DSN)%'
         corporate_account_application: '%env(IBEXA_LOCK_DSN)%'
+ibexa_fieldtype_richtext:
+     custom_styles:
+        highlighted_word:
+            template: '@ibexadesign/custom_style/highlighted_word.html.twig'
+            inline: true
+        highlighted_block:
+            template: '@ibexadesign/custom_style/highlighted_block.html.twig'
+            inline: false
