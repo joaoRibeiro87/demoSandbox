@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9c60aa4bc95b35d06e476fc55a3cc2b",
+    "content-hash": "258273d124eb081159c8faa53693f428",
     "packages": [
         {
             "name": "babdev/pagerfanta-bundle",
@@ -279,16 +279,16 @@
         },
         {
             "name": "composer/semver",
-            "version": "3.4.0",
+            "version": "3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "35e8d0af4486141bc745f23a29cc2091eb624a32"
+                "reference": "c51258e759afdb17f1fd1fe83bc12baaef6309d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/35e8d0af4486141bc745f23a29cc2091eb624a32",
-                "reference": "35e8d0af4486141bc745f23a29cc2091eb624a32",
+                "url": "https://api.github.com/repos/composer/semver/zipball/c51258e759afdb17f1fd1fe83bc12baaef6309d6",
+                "reference": "c51258e759afdb17f1fd1fe83bc12baaef6309d6",
                 "shasum": ""
             },
             "require": {
@@ -340,7 +340,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.4.0"
+                "source": "https://github.com/composer/semver/tree/3.4.2"
             },
             "funding": [
                 {
@@ -356,7 +356,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-08-31T09:50:34+00:00"
+            "time": "2024-07-12T11:35:52+00:00"
         },
         {
             "name": "cron/cron",
@@ -3730,18 +3730,19 @@
         },
         {
             "name": "ibexa/connector-qualifio",
-            "version": "v4.6.7",
+            "version": "v4.6.8",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ibexa/connector-qualifio.git",
-                "reference": "c9fe3108a73cfb462c312f617fac28c1f2dd87aa"
+                "reference": "53bcd426259361cd4b6041d2e98b4ae268519762"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://updates.ibexa.co/dist/ibexa/connector-qualifio/ibexa-connector-qualifio-c9fe3108a73cfb462c312f617fac28c1f2dd87aa-zip-896098.zip",
-                "reference": "c9fe3108a73cfb462c312f617fac28c1f2dd87aa"
+                "url": "https://updates.ibexa.co/dist/ibexa/connector-qualifio/ibexa-connector-qualifio-53bcd426259361cd4b6041d2e98b4ae268519762-zip-45ecfa.zip",
+                "reference": "53bcd426259361cd4b6041d2e98b4ae268519762"
             },
             "require": {
+                "ext-json": "*",
                 "ibexa/admin-ui": "~4.6",
                 "ibexa/core": "~4.6",
                 "ibexa/fieldtype-richtext": "~4.6",
@@ -3755,14 +3756,17 @@
                 "symfony/yaml": "^5.4"
             },
             "require-dev": {
+                "dama/doctrine-test-bundle": "^6.7",
                 "ibexa/code-style": "^1.1",
                 "ibexa/fieldtype-address": "~4.6",
+                "ibexa/search": "~4.6",
                 "ibexa/test-core": "~4.6",
                 "phpstan/phpstan": "^1.2",
                 "phpstan/phpstan-phpunit": "^1.0",
                 "phpstan/phpstan-symfony": "^1.3",
                 "phpunit/phpunit": "^9",
-                "qossmic/deptrac-shim": "^0.24.0 || ^1.0.2"
+                "qossmic/deptrac-shim": "^0.24.0 || ^1.0.2",
+                "symfony/phpunit-bridge": "^5.4"
             },
             "type": "ibexa-bundle",
             "extra": {
@@ -3795,6 +3799,9 @@
                 "test": [
                     "phpunit -c phpunit.xml.dist"
                 ],
+                "test-integration": [
+                    "phpunit -c phpunit.integration.xml"
+                ],
                 "phpstan": [
                     "phpstan analyse -c phpstan.neon"
                 ],
@@ -3809,10 +3816,10 @@
                 "ibexa-dxp"
             ],
             "support": {
-                "source": "https://github.com/ibexa/connector-qualifio/tree/v4.6.7",
+                "source": "https://github.com/ibexa/connector-qualifio/tree/v4.6.8",
                 "issues": "https://github.com/ibexa/connector-qualifio/issues"
             },
-            "time": "2024-06-10T13:12:52+00:00"
+            "time": "2024-07-11T08:29:21+00:00"
         },
         {
             "name": "ibexa/content-forms",
@@ -5620,16 +5627,16 @@
         },
         {
             "name": "ibexa/headless-assets",
-            "version": "v4.6.7",
+            "version": "v4.6.8",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ibexa/headless-assets.git",
-                "reference": "167a637c2042bdb8a421875f7dd6d161a89ea523"
+                "reference": "f74ecfc4cf3be274f001d40dd27c22b6d4d29541"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://updates.ibexa.co/dist/ibexa/headless-assets/ibexa-headless-assets-167a637c2042bdb8a421875f7dd6d161a89ea523-zip-ca3c9e.zip",
-                "reference": "167a637c2042bdb8a421875f7dd6d161a89ea523"
+                "url": "https://updates.ibexa.co/dist/ibexa/headless-assets/ibexa-headless-assets-f74ecfc4cf3be274f001d40dd27c22b6d4d29541-zip-0fb270.zip",
+                "reference": "f74ecfc4cf3be274f001d40dd27c22b6d4d29541"
             },
             "require": {
                 "php": "^7.4 || ^8.0",
@@ -5695,10 +5702,10 @@
                 "ibexa-dxp"
             ],
             "support": {
-                "source": "https://github.com/ibexa/headless-assets/tree/v4.6.7",
+                "source": "https://github.com/ibexa/headless-assets/tree/v4.6.8",
                 "issues": "https://github.com/ibexa/headless-assets/issues"
             },
-            "time": "2024-06-05T07:01:37+00:00"
+            "time": "2024-07-10T07:17:24+00:00"
         },
         {
             "name": "ibexa/http-cache",
@@ -19526,7 +19533,167 @@
             "time": "2023-08-18T12:36:18+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "symfony/debug-bundle",
+            "version": "v5.4.40",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/debug-bundle.git",
+                "reference": "177f79296705823eee0d7dd79773f3a9df884fe0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/debug-bundle/zipball/177f79296705823eee0d7dd79773f3a9df884fe0",
+                "reference": "177f79296705823eee0d7dd79773f3a9df884fe0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "php": ">=7.2.5",
+                "symfony/http-kernel": "^4.4|^5.0|^6.0",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/twig-bridge": "^4.4|^5.0|^6.0",
+                "symfony/var-dumper": "^4.4|^5.0|^6.0"
+            },
+            "conflict": {
+                "symfony/config": "<4.4",
+                "symfony/dependency-injection": "<5.2"
+            },
+            "require-dev": {
+                "symfony/config": "^4.4|^5.0|^6.0",
+                "symfony/dependency-injection": "^4.4|^5.0|^6.0",
+                "symfony/web-profiler-bundle": "^4.4|^5.0|^6.0"
+            },
+            "suggest": {
+                "symfony/config": "For service container configuration",
+                "symfony/dependency-injection": "For using as a service from the container"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\DebugBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides a tight integration of the Symfony VarDumper component and the ServerLogCommand from MonologBridge into the Symfony full-stack framework",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/debug-bundle/tree/v5.4.40"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-05-31T14:33:22+00:00"
+        },
+        {
+            "name": "symfony/web-profiler-bundle",
+            "version": "v5.4.40",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/web-profiler-bundle.git",
+                "reference": "a29669617c4e63785f363571a190a706b9022890"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/web-profiler-bundle/zipball/a29669617c4e63785f363571a190a706b9022890",
+                "reference": "a29669617c4e63785f363571a190a706b9022890",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/config": "^4.4|^5.0|^6.0",
+                "symfony/framework-bundle": "^5.3|^6.0,<6.4",
+                "symfony/http-kernel": "^5.3|^6.0",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/routing": "^4.4|^5.0|^6.0",
+                "symfony/twig-bundle": "^4.4|^5.0|^6.0",
+                "twig/twig": "^2.13|^3.0.4"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<5.2",
+                "symfony/form": "<4.4",
+                "symfony/mailer": "<5.4",
+                "symfony/messenger": "<4.4"
+            },
+            "require-dev": {
+                "symfony/browser-kit": "^4.4|^5.0|^6.0",
+                "symfony/console": "^4.4|^5.0|^6.0",
+                "symfony/css-selector": "^4.4|^5.0|^6.0",
+                "symfony/stopwatch": "^4.4|^5.0|^6.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\WebProfilerBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides a development tool that gives detailed information about the execution of any request",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/web-profiler-bundle/tree/v5.4.40"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-05-31T14:33:22+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
